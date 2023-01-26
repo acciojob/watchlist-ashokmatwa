@@ -10,3 +10,15 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 }
+//add new records -->
+//add a movie you really want to watch
+//add a new director you discovered and want to explore his work
+//add a movie-director pair.
+//
+//Movie and Director as your only model classes,
+//which will have some fields as their properties, constructors and getters-setters.
+//
+//controller, service and repository class with appropriate annotations.
+
+
+//	Use ResponseEntity object to return the required objects in the controllers
