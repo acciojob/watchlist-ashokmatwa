@@ -54,8 +54,10 @@ public class MovieRepository {
     }
     public void deleteDirectorByName(String dName){
         dbDirector.remove(dName);
+        dbPair.remove(dName);
     }
     public void deleteAllDirectors(){
         dbDirector.clear();
+        dbPair.clear();
     }
 }
