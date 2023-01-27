@@ -53,11 +53,26 @@ public class MovieRepository {
         return list;
     }
     public void deleteDirectorByName(String dName){
-        dbDirector.remove(dName);
-        dbPair.remove(dName);
+        dbDirector.remove(dName); //remove from director db
+
+        //checking the movies made by a director is added to movie or not
+        List<String> movie = dbPair.get(dName);
+        for(String m : movie) {
+            dbMovie.remove(m);
+        }
+
+        dbPair.remove(dName); //remove from pair db
     }
     public void deleteAllDirectors(){
         dbDirector.clear();
+
+        for(String director : dbPair.keySet()){
+            List<String> movie = dbPair.get(director);
+            for(String m : movie) {
+                dbMovie.remove(m);
+            }
+        }
+
         dbPair.clear();
     }
 }
